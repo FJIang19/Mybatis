@@ -2,7 +2,7 @@
 ## Mybatis入门
 **Mybatis封装了Dao层，使其不用再覆写实体类接口的方法，仅需在映射mapper.xml里写sql语句即可，简化了开发**
 
-### Mybatis_User demo(使用maven构建项目）
+### Mybatis_User demo(使用maven构建项目，采用xml方式） 
   1. 在Java包下创建实体类User
   2. 在Java包下创建接口UserDao
   3. 导入Mybatis依赖
@@ -91,3 +91,12 @@
  3. 执行sql的xml文件里的 namespace 必须为Java包下的接口的全名，select id必须与接口里的方法一致，resultType必须与Java包下实体类全名
   ![](https://github.com/FJIang19/Mybatis/blob/master/%E6%B3%A8%E6%84%8F2.png "注意2")
       
+## 采用注解方式
+1. 不再需要mapper映射xml文件(即DaoUser.xml)
+2. 将Mybatis连接xml里的resource改为class = "接口的全类名"
+  
+  ![](https://github.com/FJIang19/Mybatis/blob/master/%E6%B3%A8%E8%A7%A32.png "注解")
+  
+3. 在接口里的方法上面加上@Select("sql语句")
+ 
+  ![](https://github.com/FJIang19/Mybatis/blob/master/%E6%B3%A8%E8%A7%A3.png "注解2")
